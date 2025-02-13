@@ -4,3 +4,5 @@ git commit -m "Init"
 git remote add <name> <url>
 git push --set-upstream Day1 master
 git push
+To check for remote url
+git remote -v
