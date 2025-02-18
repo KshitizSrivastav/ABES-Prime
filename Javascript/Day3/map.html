@@ -18,6 +18,13 @@
             return acc+ele;
         })
         console.log(ans);
+
+        //Using Reduce just like map
+        const newA=arr.reduce((acc,ele)=>{
+            acc.push(ele*2);
+            return acc;
+        },[]);
+        console.log(newA);
     </script>
 </body>
 </html>
