@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h2>Objects in Javascript</h2>
+    <script>
+        const obj={
+            "name":"Kshitiz",
+            "place":"Delhi"
+        };
+        console.log(obj);
+        //Read from object
+        const user=obj.name;
+        console.log(user);
+        //Update the object value
+        obj.place="Ghaziabad";
+        console.log(obj);
+        //Add the value in object
+        obj.country="India";
+        console.log(obj);
+        //Access a value or key that is not present then the result is undefined.
+        const age=obj.age;
+        console.log(age);
+        //Access the value dynamically
+        const key=prompt("Enter the key");
+        console.log(obj[key]);
+        //Delete a key value pair
+        delete obj.place;
+        console.log(obj);
+    </script>
+</body>
+</html>

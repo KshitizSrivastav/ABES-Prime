@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var let and const in Javascript</title>
+</head>
+<body>
+    <h1>Var Let and Const in Javascript
+    </h1>
+    <script>
+        // var is function scope
+        // let is global or block scope
+        //const is block scope
+
+        // const temp=()=>{
+        //     if (true){
+        //         var username="Raj";
+        //     }
+        //     document.writeln(username);
+        // }
+        // temp();
+        // document.writeln(username);
+
+        const temp=()=>{
+            if (true){
+                let username="Raj";
+            }
+            document.writeln(username);
+        }
+        temp();
+    </script>
+</body>
+</html>

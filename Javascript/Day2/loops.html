@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in Javascript</title>
+</head>
+<body>
+    <h2>Loops in Javascript</h2>
+    <script>
+        const arr = ["Delhi","Chennai","Kolkata"];
+        //Iterating through the array
+        for (let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        //Another way of iteration using in operation
+        for (let i in arr){
+            //keys
+            console.log("in "+i);
+        }
+        //Another way of iteration using of operation
+        for (let i of arr){
+            //values
+            console.log("of "+i);
+        }
+        //Other loops that exist in javascript are while{} and do{} while{};
+    </script>
+</body>
+</html>

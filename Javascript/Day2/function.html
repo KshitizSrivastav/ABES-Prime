@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+</head>
+<body>
+    <h1>Functions in Javascript</h1>
+    <script>
+        // // -----------Function Declaration
+        // function printx(a){
+        //     document.writeln("Hello "+a);
+        // }
+        // printx("Kshitiz");
+        // //-------------Function Assignment
+        // const view=function copy(a){
+        //     document.writeln(a);
+        // }
+        // view("Rohan");
+        // //-------------Anonymous Function Assignment
+        // const a=function (b){
+        //     document.writeln(b);
+        // }
+        // a("Rakesh");
+        // //-------------Arrow Function Assignment
+        // //**********ES6 Syntax**************
+        // const v=(x)=>{
+        //     document.writeln("Hi "+x);
+        // }
+        // v("Mohan");
+
+        // //Function to calculate the sum of two numbers and return its mod 10 using Function Declaration
+        // function sum(a,b){
+        //     document.writeln("The sum mod 10 is "+(a+b)%10);
+        // }
+        // sum(20,32);
+        // //Using function assignment
+        // const s=function sum(a,b){
+        //     document.writeln("The sum mod 10 is "+(a+b)%10);
+        // }
+        // s(23,33);
+        // //Using anonymous function assignment
+        // const s1=function (a,b){
+        //     document.writeln("The sum mod 10 is "+(a+b)%10);
+        // }
+        // s1(18,17);
+        // // Using arrow function assignment
+        // const s2=(a,b)=>{
+        //     document.writeln("The sum mod 10 is "+(a+b)%10);
+        // }
+        // s2(18,17);
+        const a=()=>{
+            const b=()=>{
+                console.log("Hello");
+            }
+            b();
+        }
+        a();
+    </script>
+</body>
+</html>
