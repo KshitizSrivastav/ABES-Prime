@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBacks</title>
+</head>
+<body>
+    <h2>CallBacks in JavaScript</h2>
+    <script>
+        //two separate functions
+        //This is not a callback
+        // const sum=(a,b) =>{
+        //     const ans=a+b;
+        //     return ans;
+        // }
+        // const printpretty=(txt) =>{
+        //     console.log("The output can be printed as :");
+        //     console.log(txt);
+        //     console.log("**********");
+        // }
+        // const res=sum(20,10);
+        // printpretty(sum(20,10));
+        const sum=(a,b,c) =>{
+            const ans=a+b;
+            //return ans;
+            c(ans)
+        }
+        const printpretty=(txt) =>{
+            console.log("The output can be printed as :");
+            console.log(txt);
+            console.log("**********");
+        }
+        // const res=sum(20,10);
+        // printpretty(sum(20,10));
+        //This is considered as a call back as mentioned below:
+        sum(20,30,printpretty);
+        //Higher order function takes another function as an argument and return another function as result
+        // In the above case sum() is the higher order function as it calls another function printpretty().
+
+
+        //Object Methods
+        //  const obj={
+        //     'maths':30,
+        //     'science':60
+        // }
+        // const marks=Object.values(obj); //Get Values of object
+        // const sub=Object.keys(obj);  //Get keys of object
+        // const pairs=Object.entries(obj);  // Get key:value pairs 
+        // console.log(marks + sub + pairs);
+
+//Callback function: A function that is passed as an argument to another function
+//-------------------------------------------------------------------------/
+
+const getMetaData = () => {
+    const name = prompt("Enter your name: ");
+    console.log("Hello " + name);
+    const numOfSub = parseInt(prompt("Please enter the number of subjects: "));//parseFloat(), Number()
+    return numOfSub;
+};
+const getSubjects = (num) => {
+    const record = {};
+    for(let i=0; i<num; i++){
+        const sub = prompt(`Enter subject ${i+1} name: `);
+        const marks = Number(prompt(`Enter marks for ${sub}: `));
+        record[sub] = marks;
+    }
+    console.log(record);
+    return record;
+};
+
+
+const getPercentage = (obj) => {
+    const marks = Object.values(obj);
+    let totalMarks = 0;
+    let totalSubject = 0;
+
+    //marks.forEach(()=>{});
+    marks.forEach((a) => {
+        console.log(a);
+        totalMarks += a;
+        totalSubject++;
+    });
+    console.log("Percentage is :"+totalMarks/totalSubject);
+    return totalMarks/totalSubject;
+}
+
+const getHighestScoringSubject=(obj) =>{
+    let maxScore=0;
+    let maxScoreSub="";
+    const marks=Object.entries(obj);
+    marks.forEach((elem)=>{
+        const subName=elem[0];
+        const subMarks=elem[1];
+        if (subMarks>=maxScore){
+            maxScoreSub=subName;
+            maxScore=subMarks;
+        }
+    })
+    console.log("Highest Scoring Subject : "+maxScoreSub);
+}
+
+const getGrades = (percentage)=>{
+    const grade=[
+        [60,'C'],
+        [70,'B'],
+        [80,'A'],
+        [90,'A+'],
+        
+    ];
+    console.log(percentage);
+    let grades="F";
+    grade.forEach((arr)=>{
+        if(arr[0]<=percentage){
+            grades=arr[1];
+        }
+    });
+    console.log(grades);
+}
+const num = getMetaData();
+const data = getSubjects(num);
+
+const percentage = getPercentage(data);
+const highestScoringSub= getHighestScoringSubject(data);
+
+const grade=getGrades(percentage);
+
+</script>
+</body>
+</html>
