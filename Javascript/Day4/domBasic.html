@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h2>DOM</h2>
+    <div>
+        <h4>Hello</h4>
+        <p id="text-1" class="p1">Lorem, ipsum.</p>
+    </div>
+    <script>
+        console.log(document); //---document object represents :D.O.M (Document Object Model)
+        console.dir(window); //-----window object represents :B.O.M (Browser Object Model)
+        console.dir(document);  //Displays an interactive listing of the properties of a specified JavaScript object
+        // document is given by window. So window.document --> document
+        
+        // Write generic text in html
+        //document.write("Hello");
+        
+        //Finding or searching the element
+        //1. document.getElementById() -->   null/element
+        //2. document.getElementsByClassName() -->  HTML Collections (iterable)
+        //3. document.getElementsByTagName()  -->   HTML Collections (iterable)
+        //4. document.querySelector() -->
+        //5. document.querySelectorAll() -->
+        const elem=document.getElementById("text-1");
+        console.log(elem);
+        elem.style.color="blue";
+        // const e=document.getElementsByClassName("p2");
+        // console.log(e);
+        const ele=document.getElementsByClassName("p1");
+        console.log(ele);
+        const e=document.getElementsByTagName("p");
+        console.log(e);
+    </script>
+</body>
+</html>

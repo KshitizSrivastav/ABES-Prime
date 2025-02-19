@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1>DOM Example 1</h1>
+    <!-- <div id="d1">
+        <div class="in">
+            <h4>Invitation</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat alias cumque nobis? Quae, sit eos delectus, omnis nemo nostrum quisquam laborum quasi repellendus dignissimos quidem minus, eius dicta perferendis iusto.</p>
+        </div>
+        <div class="in">
+            <h3>Reminder</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis est et magnam ut eveniet at maiores. Ut maiores maxime ab harum aspernatur, iusto, facilis, officia fugit ducimus natus doloribus! Ipsum.</p>
+        </div>
+        <div class="in">
+            <h4>Notice</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quidem, reprehenderit ea est similique officiis dolorum corrupti beatae quis, laboriosam quaerat? Aperiam dolorum, fuga quas rem impedit asperiores eius id.</p>
+        </div>
+        <div class="in">
+            <h3>Message</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quibusdam inventore iusto amet perferendis dolore molestiae soluta dolorem blanditiis porro! Nam quo nulla aliquam fugiat, quis tempore! Ducimus, dolor consectetur.</p>
+        </div>
+    </div> -->
+    <script>
+        //---------h1 color changed to red----------
+        // console.dir(document.children[0]);
+        // console.dir(document.children[0].children[1].children[0]);
+        // document.children[0].children[1].children[0].style.color="red";
+
+        // //---------
+        // document.getElementById("d1").style.backgroundColor="blue";
+        // document.getElementsByClassName("in")[0].style.backgroundColor="yellow";
+        // document.getElementsByClassName("in")[1].style.backgroundColor="yellow";
+        // document.getElementsByClassName("in")[2].style.backgroundColor="yellow";
+        // document.getElementsByClassName("in")[3].style.backgroundColor="yellow";
+
+        // //--------------------//
+        const mappings={
+            Invitation : "You are invited for the event",
+            Reminder : "You are reminded for the task",
+            Notice : "You have a notice from the college",
+            Message : "You have 7 messages",
+        };
+        // Array.from(d1.children).forEach((child)=>{
+        //     let key=child.children[0].innerText;
+        //     console.log(key);
+        //     child.children[1].innerText=mappings[key];
+        // })
+
+        // append , appendChild , remove , removeChild , prepend , createElement
+        const newElement=document.createElement("div");
+        const rootElement=document.querySelector("body");
+        newElement.innerText="Hi from outer DOM div";
+        rootElement.appendChild(newElement);
+        Object.entries(mappings).forEach(()=>{
+            const newChild=document.createElement('div');
+            newChild.innerText="Hello from inner div";
+            newElement.appendChild(newChild);
+        })
+
+        // Another way of adding directly HTML elements
+        Object.entries(mappings).forEach((elem)=>{
+            const newChild=document.createElement('div');
+            newChild.style.border="2px solid green";
+            newChild.innerHTML=`
+            <h4 style="color : red">${elem[0]}</h4>
+            <p>${elem[1]}</p>
+            `
+            newElement.appendChild(newChild);
+        })
+    </script>
+</body>
+</html>
