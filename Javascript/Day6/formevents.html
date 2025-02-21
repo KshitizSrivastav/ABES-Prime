@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./formevents.css">
+</head>
+<body>
+    <form onsubmit="handleFormSubmit(event)">
+        <input type="number" placeholder="Enter your id" name="id" required>
+        <input type="text"  placeholder="Enter your email" name="email" required>
+        <input type="text"  placeholder="Enter your name" name="fullname" required>
+        <input type="text"  placeholder="Enter your city" name="city" required>
+        <button>Add</button>
+    </form>
+    <select onchange="handleSelect(event)">
+        <!-- <option value="Delhi">Delhi</option>
+        <option value="Noida">Noida</option>
+        <option value="Mumbai">Mumbai</option> -->
+    </select>
+    <div id="root"></div>
+    <script src="./formevents.js"></script>
+</body>
+</html>
