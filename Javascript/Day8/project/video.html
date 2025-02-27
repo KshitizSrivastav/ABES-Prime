@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Video</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <a href="index.html">Home</a>
-    <iframe 
-        width="560" height="315" 
-        src="https://www.youtube.com/embed/z3pQVQbdg0g?si=TifjC3Oc_PSajdnq" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
 
+<body>
+    <header>
+        <a href="index.html">
+            <div class="logo">
+                <img src="./assets/ytLogo.png" alt="">
+            </div>
+        </a>
+        <div class="search">
+            <input type="text" id="search-text" placeholder="Search">
+            <button onclick="handleSearch()"><i class='bx bx-search' style='color:#ffffff'></i></button>
+        </div>
+        <div class="user-profile"><span>User</span></div>
+    </header>
+
+    <aside class="menu">
+        <nav>
+            <a href="index.html"><img src="./assets/home.png" alt="">Home</a>
+            <a href="#"><img src="./assets/subs.png" alt="">Subscriptions</a>
+            <a href="history.html"><img src="./assets/history.png" alt="">History</a>
+            <a href="#"><img src="./assets/playlist.png" alt="">Playlists</a>
+        </nav>
+    </aside>
+
+    <main id="play-video-container">
+        <div class="main-video">
+            <iframe width="930" height="520" src="" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+        <aside class="side-video-container"></aside>
+    </main>
+    
     <script>
-        const iframe = document.querySelector('iframe');
-        const [a, videoId] = window.location.search.split('=');
-        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        const iframe = document.querySelector('iframe')
+        const searchText = window.location.search;
+        const splitText = searchText.split('=');
+        const videoId = splitText[1];
+        iframe.src = `https://www.youtube.com/embed/${videoId}`
+
         const youtubeHistory = localStorage.getItem('yt_history');
-        if(!youtubeHistory){
+        if (!youtubeHistory) {
             const newHistory = [];
             newHistory.push(videoId);
-            localStorage.setItem('yt_history', JSON.stringify(newHistory));
+            localStorage.setItem("yt_history", JSON.stringify(newHistory));
         }
-        else{
-            const newHistory=JSON.parse(youtubeHistory);
+        else {
+            const newHistory = JSON.parse(youtubeHistory);
             newHistory.push(videoId);
-            localStorage.setItem('yt_history', JSON.stringify(newHistory));
+            localStorage.setItem("yt_history", JSON.stringify(newHistory));
         }
-        console.log(JSON.parse(localStorage.getItem('yt_history')));
     </script>
 </body>
+
 </html>

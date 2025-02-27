@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtube</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="script.js" defer></script>
+    <title>YouTube</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <input type="text" name="search-text" onchange="handleSearch(event)">
-        <button onclick="handleSearch()">Search</button>
+        <a href="index.html">
+            <div class="logo">
+                <img src="./assets/ytLogo.png" alt="">
+            </div>
+        </a>
+        <div class="search">
+            <input type="text" id="search-text" placeholder="Search">
+            <button onclick="handleSearch()"><i class='bx bx-search' style='color:#ffffff'></i></button>
+        </div>
+        <div class="user-profile"><span>User</span></div>
     </header>
-    <aside>
-        <a href="history.html">History</a>
+
+    <aside class="menu">
+        <nav>
+            <a href="index.html"><img src="./assets/home.png" alt="">Home</a>
+            <a href="#"><img src="./assets/subs.png" alt="">Subscriptions</a>
+            <a href="history.html"><img src="./assets/history.png" alt="">History</a>
+            <a href="#"><img src="./assets/playlist.png" alt="">Playlists</a>
+        </nav>
     </aside>
-    <main>
-        <!-- <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div> -->
-    </main>
+
+    <main id="home-video-container"></main>
+    
+    <script src="script.js"></script>
 </body>
 </html>
