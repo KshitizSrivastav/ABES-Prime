@@ -1,0 +1,23 @@
+.card{
+    margin: 1rem auto;
+    max-width: 400px;
+    background-color: yellow;
+    padding: 1rem;
+    text-align: center;
+}
+
+.submit{
+    background-color: blue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel{
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}

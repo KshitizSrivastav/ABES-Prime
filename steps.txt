@@ -16,3 +16,36 @@
     import React from 'react';
     import ReactDOM from 'react-dom';
 `
+--> Basic react , render app component
+--> In script tag , write type=module
+--> In package.json , write "type":"module"
+
+-->Install a bundler (eg: Vite, Parcel)
+-->Run the app
+`npm i Parcel
+ npx i parcel
+ To minify the code:
+ npx parcel build index.html
+ `
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+default export =>
+const Card = () => { }
+export default Card
+
+default import =>
+import Card from "./components/card.js"
+
+****************************************************
+In default import and export the name doesnot matter
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Named Export =>
+export const Title = "Hello From Title"
+
+Named Import =>
+import Title from "./components/card.js"
+
+****************************************************
+In named import and export name matters
