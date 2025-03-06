@@ -1,0 +1,33 @@
+// import HomePage from "./pages/HomePage";
+// import SearchPage from "./pages/SearchPage";
+// const App_basic_router = () => {
+//   const { location } = window;
+//   const { pathname } = location;
+//   console.log(location);
+//   if (pathname === "/search") {
+//     return (
+//       <div>
+//         <SearchPage />
+//       </div>
+//     )
+
+//   }
+//   else if (pathname === "/") {
+//     return (
+//       <div>
+//         <HomePage />
+//       </div>
+//     )
+//   }
+//   else {
+//     return (
+//       <div>
+//         <h2>404 Not Found</h2>
+//         <a href="/">Home</a>
+//       </div>
+//     )
+//   }
+// }
+
+
+// export default App_basic_router;
